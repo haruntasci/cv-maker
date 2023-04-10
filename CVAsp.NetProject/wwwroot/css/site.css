@@ -1,0 +1,35 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: 60px;
+}
+.validation-summary-errors{
+    border:1px solid red;
+    background-color:red;
+    color:white;
+    padding:5px;
+    border-radius:10px;
+}
+.validation-summary-errors ul{
+    list-style-type: none;
+    color:#FFF;
+}
+.cursor-pointer{
+    cursor:pointer;
+}
+.font-size{
+    font-size: 14px;
+}

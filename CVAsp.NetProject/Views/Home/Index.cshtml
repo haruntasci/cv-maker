@@ -1,0 +1,112 @@
+﻿@model UserInfoViewModel
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div id="parentDiv" class="container">
+
+    <div class="row mb-3">
+        <div class="col">
+            <div class="card">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-3">
+                            <div>
+                                <img src="~/uploads/@Model.ProfileImageFileName"
+                                     class="rounded-circle img-fluid" style="width: 150px;">
+                            </div>
+                        </div>
+
+                        <div class="col-9">
+                            <div class="row">
+                                <div class="col ms-2">
+                                    <h5 class="fs-5">@Model.FullName</h5>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-4 ms-2">
+                                    <p class="text-muted mb-0">E-mail Address</p>
+                                    <p class="mb-1 small font-size">@Model.Email</p>
+                                    <p class="text-muted mb-0">Phone</p>
+                                    <p class="mb-1 small font-size">@Model.PhoneNumber</p>
+                                    <p class="text-muted mb-0">Address</p>
+                                    <p class="mb-1 small font-size">@Model.Address</p>
+                                </div>
+                                <div class="col-5 ms-5">
+                                    <p class="text-muted mb-0"> <i class="fab fa-github fa-lg me-2" style="color: #333333;"></i>GitHub</p>
+                                    <p class="mb-1"><a href="@Model.Github" class="mb-0 small" target="_blank">@Model.Github</a></p>
+                                    <p class="text-muted mb-0"><i class="fab fa-linkedin fa-lg me-2" style="color: #55acee;"></i>Linkedin</p>
+                                    <p class="mb-1"><a href="@Model.Linkedin" class="mb-0 small" target="_blank">@Model.Linkedin</a></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row mb-3">
+        <div class="col">
+            <div class="card">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col">
+                            <p class="text-muted">Summary</p>
+                            <p class="mb-1 small">@Model.Summary</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row mb-3">
+        <div class="col">
+            <div class="card">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col">
+                            <p class="text-muted">Competencies</p>
+                            <ul>
+                                <li class="small"><span class="fw-bold">Programming Languages: </span>@Model.Languages</li>
+                                <li class="small"><span class="fw-bold">Libraries: </span>@Model.Libraries</li>
+                                <li class="small"><span class="fw-bold">Platform: </span>@Model.Platform</li>
+                                <li class="small"><span class="fw-bold">Versioning: </span>@Model.Versioning</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+   
+
+</div>
+<div class="row">
+    <div class="col-10 offset-1">
+        <div class="text-center">
+            <a id="printPDF" class="btn btn-danger"><i class="fa-solid fa-file-pdf  ms-2 me-2"></i></a>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+@section scripts{
+    <script>
+        $("#printPDF").click(() => {
+            var element = document.getElementById('parentDiv');
+            html2pdf().from(element).set({
+                margin: 5,
+                filename: 'myfile.pdf',
+                image: { type: 'jpeg', quality: 0.98 },
+                html2canvas: { scale: 2, logging: true, dpi: 192, letterRendering: true },
+                jsPDF: { unit: 'mm', orientation: 'portrait', compress: true, format: 'letter' }
+            }).save()
+        });
+    </script>
+}

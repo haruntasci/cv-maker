@@ -1,0 +1,112 @@
+﻿@model UserInfoViewModel
+@{
+    ViewData["Title"] = "Profile";
+}
+
+
+<div class="row">
+    <div class="col-4 offset-4">
+        <h1 class="display-5 border-bottom text-center">@ViewData["Title"]</h1>
+    </div>
+</div>
+
+<div class="row">
+
+    <div class="col">
+        <div asp-validation-summary="All" class="text-danger small"></div>
+        <form method="post" asp-action="ProfileAddNewProps" enctype="multipart/form-data">
+            <div asp-validation-summary="ModelOnly" class="text-danger small"></div>
+            <div class="row">
+
+                <div class="col-4">
+
+                    <div class="form-group mb-3">
+                        <label asp-for="Email" class="form-label">Email</label>
+                        <input asp-for="Email" class="form-control" placeholder="johndoe@gmail.com" />
+                        <span class="text-danger small" asp-validation-for="Email"></span>
+                    </div>
+                    <div class="form-group mb-3">
+                        <label asp-for="PhoneNumber" class="form-label">Phone Number</label>
+                        <input asp-for="PhoneNumber" class="form-control" placeholder="+XX (XXX) XXX XX XX" />
+                        <span class="text-danger small" asp-validation-for="PhoneNumber"></span>
+                    </div>
+                    <div class="form-group mb-3">
+                        <label asp-for="Profession" class="form-label">Profession</label>
+                        <input asp-for="Profession" class="form-control" placeholder="Back-End Developer" />
+                        <span class="text-danger small" asp-validation-for="Profession"></span>
+                    </div>
+                    <div class="form-group mb-3">
+                        <label asp-for="Address" class="form-label">Address</label>
+                        <input asp-for="Address" class="form-control" placeholder="Goethe Strasse 17 Wülfrath Germany" />
+                        <span class="text-danger small" asp-validation-for="Address"></span>
+                    </div>
+                    <div class="form-group mb-3">
+                        <label asp-for="Github" class="form-label">GitHub</label>
+                        <input asp-for="Github" class="form-control" placeholder="www.github.com/haruntasci" />
+                        <span class="text-danger small" asp-validation-for="Github"></span>
+                    </div>
+                    <div class="form-group mb-3">
+                        <label asp-for="Linkedin" class="form-label">Linkedin</label>
+                        <input asp-for="Linkedin" class="form-control" placeholder="www.linkedin.com" />
+                        <span class="text-danger small" asp-validation-for="Linkedin"></span>
+                    </div>
+
+
+                </div>
+
+                <div class="col-4">
+
+
+                    <div class="text-center mb-2">
+                        <img width="125" src="~/uploads/@ViewData["ProfileImage"]" class="img-thumbnail rounded-circle" />
+                    </div>
+                    <div class="form-group mb-4">
+                        <label class="form-label small">Profile Image</label>
+                        <div class="input-group mb-2">
+                            <input asp-for="File" type="file" name="file" class="form-control" accept="image/*" />
+                        </div>
+                    </div>
+
+                    <div class="form-group mb-3">
+                        <label class="form-label small">Name Surname</label>
+                        <input asp-for="FullName" name="fullname" type="text" class="form-control" placeholder="John Doe" />
+                    </div>
+
+                    <div class="form-group mb-3">
+                        <label class="mb-2" for="floatingTextarea2">Summary</label>
+                        <textarea asp-for="Summary" class="form-control" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 130px"></textarea>
+                    </div>
+
+                    <div class="form-group mt-3 text-center">
+                        <button id="save" type="submit" class="btn btn-primary"><i class="fa-solid fa-save me-2"></i>Save</button>
+                    </div>
+
+
+                </div>
+
+                <div class="col-4">
+
+                    <div class="form-group mb-3">
+                        <label class="mb-2" for="floatingTextarea2">Programming Languages</label>
+                        <textarea asp-for="Languages" class="form-control" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 60px"></textarea>
+                    </div>
+                    <div class="form-group mb-3">
+                        <label class="mb-2" for="floatingTextarea2">Libraries</label>
+                        <textarea asp-for="Libraries" class="form-control" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 60px"></textarea>
+                    </div>
+                    <div class="form-group mb-3">
+                        <label class="mb-2" for="floatingTextarea2">Platform</label>
+                        <textarea asp-for="Platform" class="form-control" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 60px"></textarea>
+                    </div>
+                    <div class="form-group mb-3">
+                        <label class="mb-2" for="floatingTextarea2">Versioning</label>
+                        <textarea asp-for="Versioning" class="form-control" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 60px"></textarea>
+                    </div>
+
+
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
