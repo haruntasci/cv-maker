@@ -4,14 +4,17 @@ This project help users to easily create their CV's.
 Asp.Net MVC <br />
 Microsoft SQL Server
 # Features
-## Register Page
+## Account/Register Page
 User registration is done here.
-## Login Page
+## Account/Login Page
 User login done here.
-## Profile Page
+## Account/Profile Page
 User can enter CV details.
 ## Home Page
+CV is displayed here. Saving as PDF is done here.
 ## User Page
+Admin roled user can add new users, also edit and delete them.
 ## Members Page
+Same as User Page. But it works using AJAX technology.
 
 
