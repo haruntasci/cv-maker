@@ -1,6 +1,6 @@
 # CV Maker
 This project help users to easily create their CV's.<br />
-[DEMO](https://youtu.be/CgJcRoAJAz8)
+[DEMO](https://youtu.be/CgJcRoAJAz8)<br />
 # Technologies
 Asp.Net MVC <br /> <br />
 Microsoft SQL Server
