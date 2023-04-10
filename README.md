@@ -1,7 +1,7 @@
 # CV Maker
 This project help users to easily create their CV's.
 # Technologies
-Asp.Net MVC <br />
+Asp.Net MVC <br /> <br />
 Microsoft SQL Server
 # Features
 ## Account/Register Page
